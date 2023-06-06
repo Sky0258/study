@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="./js/animate.js"></script>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        list-style: none;
+    }
+    div {
+        margin: 100px 250px;
+        width: 500px;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+    }
+    span {
+        display: block;
+        width: 25px;
+        height: 25px;
+        border-radius: 25px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        text-align: center;
+        line-height: 25px;
+        position: absolute;
+        top: 135px;
+        font-size: 18px;
+        cursor: pointer;
+        display: none;
+        z-index: 10;
+    }
+    span.one {
+        right: 3px;
+    }
+    span.two {
+        left: 3px;
+    }
+    .img {
+        width: 500%;
+        position: relative;
+    }
+    .img li {    
+        float: left;
+    }
+    img {
+        width: 500px;
+        height: 300px;
+    }
+    .circle {
+        margin-left: 30px;
+    }
+    .circle li{
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        border: 2px solid #fff;
+        position: relative;
+        bottom: 40px;
+        float: left;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .current {
+        background-color: #fff;
+    }
+</style>
+<body>
+    <div class="box">
+        <span class="one">></span>
+        <span class="two"><</span>
+        <ul class="img">
+            <li> <img src="./timeImages/20210706210945_81de4.jpg" alt="">
+            </li>
+            <li> <img src="./timeImages/83f42dba342b4447b27e8ae00ee5b0bb.jpg" alt="">
+            </li>
+            <li> <img src="./timeImages/下载.png" alt="">
+            </li>
+            <li> <img src="./timeImages/1.png" alt="">
+            </li>
+            <li> <img src="./timeImages/20210706210945_81de4.jpg" alt="">
+            </li>
+        </ul>
+        <ul class="circle">
+        </ul>
+    </div>
+</body>
+<script>
+    var spans = document.querySelectorAll('span');
+    var box = document.querySelector('.box');
+    var img = document.querySelector('.img');
+    var circle = document.querySelector('.circle');
+
+    box.addEventListener('mouseover', function() {
+        spans[0].style.display = 'block';
+        spans[1].style.display = 'block';
+    });
+
+    box.addEventListener('mouseout',function() {
+        spans[0].style.display = 'none';
+        spans[1].style.display = 'none';
+    });
+
+    for(var i = 0;i < img.children.length;i++) {
+        var li = document.createElement('li');
+        li.setAttribute('index',i);
+        circle.appendChild(li);
+        // 小圆圈点击事件
+        li.addEventListener('click',function() {
+            // 点击改变选中状态
+            for(var j = 0;j < circle.children.length;j++) {
+                circle.children[j].className = '';
+            }
+            this.className = 'current';
+            var index = this.getAttribute('index');
+            // 点击小圆圈背景图切换
+            // 引入缓动动画的函数
+            animate(img,-index * box.offsetWidth);
+        })
+    }
+    circle.children[0].className = 'current';
+
+    // 点击左右按钮背景图切换
+    var sum = 0;
+    spans[0].addEventListener('click',function() {
+        // 无缝滚动 （克隆了一张图片）
+        if(sum == img.children.length - 1) {
+            img.style.left = 0;
+            sum = 0;
+        }
+        sum++;
+        animate(img,-sum * box.offsetWidth);
+        console.log(sum);
+    });
+    spans[1].addEventListener('click',function() {
+        sum--;
+        animate(img,-sum * box.offsetWidth);
+    })
+    
+</script>
+</html>

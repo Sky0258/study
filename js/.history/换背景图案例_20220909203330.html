@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        height: 100%;
+    }
+    body,div {
+        height: 100%;
+        width: 100%;
+        background: url('./timeImages/1.png') no-repeat center top;
+        background-size: 100%;
+        overflow: hidden;
+    }
+    div img {
+        width: 200px;
+        height: 100px;
+        float: left;
+        margin: 20px 0 0 90px;
+    }
+</style>
+<body>
+    <div>
+        <img src="./timeImages/20210706210945_81de4.jpg" alt="">
+        <img src="./timeImages/83f42dba342b4447b27e8ae00ee5b0bb.jpg" alt="">
+        <img src="./timeImages/下载.png" alt="">
+        <img src="./timeImages/1.png" alt="">
+    </div>
+</body>
+<script>
+    var imgs = document.getElementsByTagName('img');
+    var body = document.querySelector('body');
+
+    for(var i = 0;i < imgs.length;i++) {
+        imgs[i].onclick = function() {
+            body.style.backgroundImage = 'url('+ this.src +')';
+        }
+    }
+</script>
+</html>

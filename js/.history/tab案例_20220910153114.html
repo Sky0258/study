@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    .tab {
+        width: 700px;
+        margin: 200px auto;
+        /* border: 1px solid #e0e0e0; */
+    }
+    ul {
+        display: flex;
+        width: 100%;
+        background-color: #eef1ee;
+        border: 1px solid #e0e0e0;
+    }
+    li {
+        list-style: none;
+        /* border: 1px solid #e0e0e0; */
+        width: 20%;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .current {
+        background: red;
+        color: white;
+    }
+</style>
+<body>
+    <div class="tab">
+        <ul>
+            <li class="current">商品介绍</li>
+            <li>规格与包装</li>
+            <li>售后问题</li>
+            <li>商品评价（5000）</li>
+            <li>手机社区</li>
+        </ul>
+
+        <div class="item">
+            <div>商品介绍模块</div>
+            <div>规格与包装模块</div>
+            <div>售后保障模块</div>
+            <div>商品评价模块</div>
+            <div>手机社区模块</div>
+        </div>
+    </div>
+
+</body>
+<script>
+    var tabLi = document.querySelectorAll('li');
+    
+    for(var i = 0;i < tabLi.length;i++) {
+        tabLi[i].setAttribute('index','i');
+        tabLi[i].onclick = function() {
+            console.log(this.index);
+        }
+    }
+</script>
+</html>

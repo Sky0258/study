@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <input type="text" value="请输入内容">
+    <button>点击</button><br><br>
+
+    密码：<input type="password" name="" id="pasIn" >
+    <button id="pas">显示密码</button><br><br>
+
+    <button id="dis">隐藏图片</button><br>
+    <img src="./timeImages/m.gif" alt="">
+</body>
+<script>
+    var input = document.querySelector('input');
+    var button = document.querySelector('button');
+
+    var pasIn = document.getElementById('pasIn');
+    var pas  = document.getElementById('pas');
+
+    var dis = document.querySelector('#dis');
+    var img = document.querySelector('img');
+
+    button.onclick = function() {
+        input.value = '我被点击啦';
+        this.disabled = true;
+    }
+
+    pas.onclick = function() {
+        if(pasIn.type == 'password') {
+            pasIn.type = 'text';
+        } else {
+            pasIn.type = 'password';
+        }
+    }
+
+    dis.onclick = function() {
+        img.style.display = 'none';
+    }
+</script>
+</html>

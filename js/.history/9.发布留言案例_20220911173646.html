@@ -1,0 +1,48 @@
+<!-- 创建新的节点放置到某个特定节点里面，可以放在其子节点的后面 （类似push），也可以设置某个特定的子节点前面 -->
+<!-- 删除节点 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li {
+        width: 500px;
+    }
+</style>
+<body>
+    <textarea cols="40" rows="6"></textarea>
+    <button>发布</button>
+    <ul>
+    </ul>
+</body>
+<script>
+    var text = document.querySelector('textarea');
+    var btn = document.querySelector('button');
+    var ul = document.querySelector('ul');
+
+    btn.onclick = function() {
+        if (text.value == ''){
+            alert('请输入您要发布的内容');
+            return false;
+        } else {
+            var li = document.createElement('li');
+            li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+
+            // 1.类似于 push 的放到 ul 的最后面
+            // ul.appendChild(li);
+
+            // 2.放到特定的子节点的前面  (这里每一次都是放在第一个子元素前面)
+            ul.insertBefore(li,ul.children[0]);
+
+            text.value = '';
+
+            // 删除节点
+
+        }
+    }
+</script>
+</html>

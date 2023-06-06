@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+//     // 运用寻常方法创建对象（只能一个一个生产）
+//     var ldh = {
+//         uname: "刘德华",
+//         sex: "男",
+//         age: 55,
+//         sing: function(){
+//             console.log("冰雨");
+//         }
+//     }
+
+//     // 运用 new 创建对象（只能一个一个生产）
+//     var ldh = new Object();
+//     ldh.uname = "刘德华";
+//     ldh.sex = "男";
+//     ldh.age = 55;
+//     var sing = function(){
+//         console.log("冰雨");
+//     }
+
+//     // 运用构造函数创建对象（可以批量生产）
+//    function Star(uname,sex,age){
+//        this.uname = uname;
+//        this.sex = sex;
+//        this.age = age;
+//        this.sing = function(sang){
+//            console.log(sang);
+//        }
+//    }
+
+//    var ldh = new Star("刘德华","男",55);
+//    ldh.sing("冰雨");
+
+//    console.log(ldh.uname);
+//    console.log(ldh.sex);
+//    console.log(ldh.age);
+
+//    // 遍历对象 （for 变量 in 对象）
+//    for(var k in ldh) {
+//        console.log(ldh[k]);
+//    }
+
+   function getRandom(min,max) {
+        min = Math.ceil(min);        // 确保当输入为小数时，仍能取范围内的整数
+        max = Math.floor(max); 
+        return Math.floor(Math.random() * (max - min)) + min;
+   }
+
+   console.log(getRandom(1.5,5));
+
+</script>
+<body>
+    
+</body>
+</html>

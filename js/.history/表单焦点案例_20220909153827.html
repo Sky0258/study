@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input:focus{
+        outline: 1px solid #9cdcfe;
+    }
+</style>
+<body>
+    <input type="text" placeholder="手机"><br>
+
+    <div class="login">
+        <input type="password" class="pas">
+        <p>请输入6-16位密码</p>
+    </div>
+</body>
+<script>
+    var input = document.querySelector('input');
+    var login = document.querySelector('.id');
+    var 
+
+    input.onfocus = function() {
+        this.placeholder = '';
+    }
+
+    input.onblur = function() {
+        this.placeholder = '手机';
+    }
+</script>
+</html>

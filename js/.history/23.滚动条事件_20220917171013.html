@@ -1,0 +1,65 @@
+<!-- 类似北大官网的导航栏 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0 auto;
+        padding: 0;
+    }
+    .content {
+        width: 85%;
+    }
+    div {
+        margin-top: 10px;
+    }
+    .header {
+        background-color: #fddeab;
+        height: 100px;
+    }
+    .banner {
+        background-color: #909cff;
+        height: 200px;
+    }
+    .main {
+        background-color: #ffd9e3;
+        height: 600px;
+        /* position: relative; */
+    }
+    .sliper {
+        width: 50px;
+        height: 100px;
+        position: absolute;
+        top: 410px;
+        right: 50px;
+        background-color: #fddeab;
+    }
+    .footer {
+        background-color: #909cff;
+        height: 200px;
+    }
+</style>
+
+<body>
+    <div class="content">
+        <div class="header">header</div>
+        <div class="banner">banner
+        </div>
+        <div class="main">main
+            <div class="sliper"></div>
+        </div>
+        <div class="footer">footer</div>
+    </div>
+
+</body>
+<script>
+    var sliper = document.querySelector('.sliper');
+    var main = document.querySelector('.main');
+</script>
+</html>

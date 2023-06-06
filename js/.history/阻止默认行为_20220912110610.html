@@ -1,0 +1,48 @@
+<!-- 阻止默认行为、阻止事件冒泡、事件委托、禁止选中文字、禁止右键菜单 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .father {
+        width: 200px;
+        height: 200px;
+        background-color: purple;
+        border: 1px solid #e0e0e0;
+    }
+    .son {
+        width: 150px;
+        height: 150px;
+        background-color: pink;
+        margin: auto;
+    }
+</style>
+<body>
+    <!-- 阻止默认行为，例如：a 标签的链接跳转 -->
+    <a href="http://www.baidu.com">百度</a>
+
+    <!-- 阻止事件冒泡 -->
+    <div class="father">
+        <div class="son">son</div>
+    </div>
+</body>
+<script>
+    // 阻止默认行为，例如：a 标签的链接跳转
+    var a = document.querySelector('a');
+
+    a.onclick = function(e) {
+        // 法一 return 后面的语句不再执行
+        // return false;
+        // alert('1111111');
+
+        // 法二 后面的语句正常执行 (e是事件对象，系统自动生成的)
+        e.preventDefault();
+        alert('111111');
+        console.log(e);
+    }
+</script>
+</html>

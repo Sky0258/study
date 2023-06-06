@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    .spe {
+        margin-top: 50px;
+        width: 200px;
+        height: 200px;
+        background-color: #909cff;
+        position: relative;
+    }
+
+    .one {
+        height: 40px;
+        width: 150px;
+        margin-top: 80px;
+        line-height: 40px;
+        margin: 50px auto;
+        float: left;
+    }
+
+    .one span {
+        display: block;
+        float: left;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        position: relative;
+        background-color: #ffd9e3;
+        z-index: 10;
+        cursor: pointer;
+    }
+    .one div {
+        width: 150px;
+        height: 40px;
+        position: relative;
+        background-color: #ffd9e3;
+        left: -150px;
+    }
+</style>
+<body>
+    <button>点击到500</button>
+    <button>点击到800</button>
+    <div class="spe"></div>
+
+    <div class="one">
+        <span> -> </span>
+        <div>详情信息</div>
+    </div>
+</body>
+<script>
+    var btn = document.querySelectorAll('button');
+    var div = document.querySelector('div');
+
+    btn[0].addEventListener('click',function() {
+        animate(div,500,function() {
+            alert('11111111');
+        });
+    })
+
+    btn[1].addEventListener('click',function() {
+       animate(div,800,function() {
+        alert('2222222222');
+       })
+    })
+
+    // 动画函数封装
+    function animate(obj,target,callback) {
+        // 先清除定时器避免叠代
+        clearInterval(obj.timer);
+
+        obj.timer = setInterval(function(){
+            // 步长公式：（目标 - 已走距离）/ 10；
+            var step = (target - obj.offsetLeft) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+            if(obj.offsetLeft == target) {
+                clearInterval(obj.timer);
+                // 回调函数
+                if(callback) {
+                    callback();
+                }
+            }
+            obj.style.left = obj.offsetLeft + step + 'px';
+        },15);
+    }
+
+    // ‘查看详情’案例
+    var one = document.querySelector('.one');
+
+    one.children[0].addEventListener('mouseenter',function() {
+        animate(one.children[1],40);
+    })
+</script>
+</html>

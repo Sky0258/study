@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .plus {
+        display: flex;
+    }
+
+    .left {
+        width: 380px;
+        height: 380px;
+        border: 1px solid #e0e0e0;
+        margin: 90px 30px;
+        position: relative;
+        cursor: move;
+    }
+
+    .left img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .cover {
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        top: 0;
+        background-color: #fede4f;
+        opacity: 0.5;
+        border: 1px solid #e0e0e0;
+    }
+
+    .right {
+        width: 500px;
+        height: 500px;
+        margin-top: 30px;
+        border: 1px solid #e0e0e0;
+        overflow: hidden;
+    }
+</style>
+
+<body>
+    <div class="plus">
+        <div class="left">
+            <img src="./timeImages/放大镜.jpg" alt="">
+            <div class="cover"></div>
+        </div>
+        <div class="right">
+            <img src="./timeImages/放大镜.jpg" alt="">
+        </div>
+    </div>
+
+</body>
+<script>
+    var left = document.querySelector('.left');
+    var right = document.querySelector('.right');
+    var cover = document.querySelector('.cover');
+
+    cover.addEventListener('mouseenter', function() {
+        // var x = e.pageX - left.offsetLeft;
+        // var y = e.pageY - left.offsetTop;
+        document.addEventListener('mousemove', function (e) {
+            console.log('1111');
+            console.log(e.pageX);
+            console.log(e.pageY);
+            cover.style.top = e.pageX - 100 + 'px';
+            cover.style.left = e.pageY - 100 + 'px';
+        })
+
+    })
+</script>
+
+</html>

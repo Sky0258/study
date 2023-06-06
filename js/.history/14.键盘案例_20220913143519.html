@@ -1,0 +1,62 @@
+<!-- 键盘对象，可以监听键盘按下的是哪个键
+    1.keyup:按键弹起    2.keydown:按下时，全部按键都有   3.keypress:按下时，没有特殊键  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 170px;
+        height: 30px;
+        border: 1px solid #e0e0e0;
+        margin-bottom: 5px;
+        display: none;
+        position: absolute;
+        top: 70px;
+    }
+    input {
+        margin-top: 100px;
+    }
+</style>
+<body>
+    <div></div>
+    <input type="text" name="" id="">
+</body>
+<script>
+    var input = document.querySelector('input');
+    var div = document.querySelector('div');
+
+    document.onkeyup = function() {
+        div.style.display = 'block';
+        div.innerHTML = input.value;
+
+        if(input.value == ''){
+            div.style.display = 'none';
+        }
+    }
+    input.onblur = function() {
+        div.style.display = 'none';
+    }
+
+    input.onfocus = function() {
+        if(input.value != '') {
+            div.style.display = 'block';
+        }  
+    }
+
+    // 键盘事件对象，系统自动生成，可以监测按下的是哪一个键 （通过 keyCode 类似 ASCII） 事件绑定的对象是document
+    document.onkeyup = function(e) {
+        if(e.keyCode == 13) {
+            fn();
+        }
+    }
+
+    function fn() {
+        alert('按下enter键')
+    }
+</script>
+</html>

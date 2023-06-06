@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .plus {
+        display: flex;
+    }
+
+    .left {
+        width: 380px;
+        height: 380px;
+        border: 1px solid #e0e0e0;
+        margin: 90px 30px;
+        position: relative;
+        cursor: move;
+    }
+
+    .left img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .cover {
+        height: 198px;
+        width: 198px;
+        position: absolute;
+        top: 0;
+        background-color: #fede4f;
+        opacity: 0.5;
+        border: 1px solid #e0e0e0;
+        display: none;
+    }
+
+    .right {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        margin-top: 30px;
+        border: 1px solid #e0e0e0;
+        overflow: hidden;
+        /* display: none; */
+    }
+    .right img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+</style>
+
+<body>
+    <div class="plus">
+        <div class="left">
+            <img src="./timeImages/放大镜.jpg" alt="">
+            <div class="cover"></div>
+        </div>
+        <div class="right">
+            <img class="rightImg" src="./timeImages/放大镜.jpg" alt="">
+        </div>
+    </div>
+
+</body>
+<script>
+    var left = document.querySelector('.left');
+    var right = document.querySelector('.right');
+    var cover = document.querySelector('.cover');
+    var rightImg = document.querySelector('.rightImg');
+
+    left.addEventListener('mouseover', function () {
+        cover.style.display = 'block';
+        right.style.display = 'block';
+        document.addEventListener('mousemove', function (e) {
+            var x = e.pageX - left.offsetLeft;
+            var y = e.pageY - left.offsetTop;
+            var coverY = y - cover.offsetWidth / 2;
+            var coverX = x - cover.offsetWidth / 2;
+
+            if(coverX < 0) {
+                coverX = 0;
+            }else if(coverX >= left.offsetWidth - cover.offsetWidth) {
+                coverX = left.offsetWidth - cover.offsetWidth;
+            }
+
+            if(coverY <= 0) {
+                coverY = 0;
+            }else if(coverY >= left.offsetHeight - cover.offsetHeight) {
+                coverY = left.offsetHeight - cover.offsetHeight;
+            }
+
+            cover.style.top = coverY + 'px';
+            cover.style.left = coverX + 'px';
+
+            var coverMax = left.offsetWidth - cover.offsetWidth;
+
+            var bigMax = rightImg.offsetWidth - right.offsetWidth;
+            console.log(rightImg.offsetWidth - right.offsetWidth);
+
+            var bigX = coverX * bigMax / coverMax;
+            var bigY = coverX * bigMax / coverMax;
+
+            rightImg.style.left = -bigX + 'px';
+            rightImg.style.top = -bigY + 'px';
+      })
+
+    })
+
+    left.addEventListener('mouseout',function() {
+        cover.style.display = 'none';
+        // right.style.display = 'none';
+    })
+</script>
+
+</html>

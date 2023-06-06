@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    input:focus {
+        outline: 1px solid #9cdcfe;
+    }
+
+    .login {
+        display: flex;
+        height: 28px;
+    }
+
+    p {
+        color: #999;
+    }
+</style>
+
+<body>
+    <!-- 京东搜索框 -->
+    <input type="text" placeholder="手机"><br><br>
+
+    <!-- 密码验证 -->
+    <div class="login">
+        <input type="password" class="pas">
+        <p>请输入6-16位密码</p>
+    </div><br>
+
+    <!-- 按钮事件 -->
+    <button>点击我</button>
+    <button>点击我</button>
+    <button>点击我</button>
+    <button>点击我</button>
+    <button>点击我</button>
+</body>
+<script>
+    // 京东搜索框
+    var input = document.querySelector('input');
+
+    input.onfocus = function () {
+        this.placeholder = '';
+    }
+
+    // 密码验证
+    var login = document.querySelector('.id');
+    var pas = document.querySelector('.pas');
+    var p = document.querySelector('p');
+
+    input.onblur = function () {
+        this.placeholder = '手机';
+    }
+
+    pas.onblur = function () {
+        if (this.value.length == 0) {
+            p.innerHTML = '请输入6-16位密码';
+            p.style.color = '#999';
+        } else if (this.value.length < 6 || this.value.length > 16) {
+            p.innerHTML = '密码格式错误';
+            p.style.color = 'red';
+        } else {
+            p.innerHTML = '密码格式正确';
+            p.style.color = 'green';
+        }
+    }
+
+    // 按钮事件
+    var btns = document.getElementsByTagName('button');
+
+    for(var i = 0;i < btns.length;i++) {
+        btns[i].onclick = function() {
+            for(var j = 0;j < btns.length;j++) {
+                this.style.backgroundColor = 'white';
+            }
+            this.style.backgroundColor = 'pink';
+        }
+    }
+</script>
+
+</html>

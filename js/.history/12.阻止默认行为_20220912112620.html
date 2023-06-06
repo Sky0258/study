@@ -1,0 +1,98 @@
+<!-- 阻止默认行为、阻止事件冒泡、事件委托、禁止选中文字、禁止右键菜单 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .father {
+        width: 200px;
+        height: 200px;
+        background-color: purple;
+        border: 1px solid #e0e0e0;
+        margin-top: 20px;
+    }
+    .son {
+        width: 150px;
+        height: 150px;
+        background-color: pink;
+        margin: auto;
+        margin-top: 25px;
+        text-align: center;
+    }
+</style>
+<body>
+    <!-- 阻止默认行为，例如：a 标签的链接跳转 -->
+    <a href="http://www.baidu.com">百度</a>
+
+    <!-- 阻止事件冒泡 -->
+    <div class="father">
+        <div class="son">son</div>
+    </div>
+
+    <!-- 事件委托，通过事件冒泡的原则，将事件委托给父级元素，使得代码更加方便简洁 -->
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+    </ul>
+
+    <!-- 禁止选中文字、禁止右键菜单 -->
+    <p>无法选中这段文字或者无法打开右键菜单</p>
+
+</body>
+<script>
+    // 1.阻止默认行为，例如：a 标签的链接跳转
+    var a = document.querySelector('a');
+
+    a.onclick = function(e) {
+        // 法一 return 后面的语句不再执行
+        // return false;
+        // alert('1111111');
+
+        // 法二 后面的语句正常执行 (e是事件对象，系统自动生成的)
+        e.preventDefault();
+        alert('111111');
+        console.log(e);
+    }
+
+
+    // 2.阻止事件冒泡
+    var div = document.querySelectorAll('div');
+
+    div[1].onclick = function(e) {
+        alert('son');
+        // 阻止 son 的事件冒泡
+        e.stopPropagation();
+    }
+
+    div[0].onclick = function() {
+        alert('father');
+    }
+
+    // document.onclick = function() {
+    //     alert('document');
+    // }
+
+
+    // 3.事件委托
+    var ul = document.querySelector('ul');
+
+    ul.onclick = function(e) {
+        // 点击的是li 但事件是委托在 ul 上的 
+        // e.target 是指点击的元素 (li)      this 是绑定事件的元素 (ul)
+        alert(e.target.innerHTML);
+    }
+
+    // 4.禁止选中文字、禁止右键菜单
+    var p = document.querySelector('p');
+    // contextmenu 可以禁止右键菜单
+    document.addEventListener('contextmenu',function(e) {
+        e.preventDefault();
+    })
+</script>
+</html>

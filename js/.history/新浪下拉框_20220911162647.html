@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+    }
+    .tab {
+        margin: 100px auto;
+        width: 600px;
+        /* border: 1px solid #e0e0e0; */
+    }
+    .tab > ul {
+        width: 100%;
+        display: flex;
+        border: 1px solid #e0e0e0;
+    }
+    .tab > ul > li {
+        flex: 1;
+        text-align: center;
+        line-height: 40px;
+    }
+    .tab > ul > li a {
+        display: block;
+        width: 100%;
+        color: black;
+    }
+    .tab > ul > li a:hover {
+        background-color: #edecec;
+        color: #ff8800;
+    }
+    .list ul li{
+        display: none;
+        border-bottom: 1px solid #ff8800;
+        cursor: pointer;
+    }
+    .list ul li:hover {
+        background-color: #edecec;
+        color: #ff8800;
+    }
+</style>
+<body>
+    <div class="tab">
+        <ul class="list">
+            <li>
+                <a href="#">登录</a>
+                <ul>
+                    <li>私信</li>
+                    <li>评论</li>
+                    <li>@我</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">微博</a>
+                <ul>
+                    <li>私信</li>
+                    <li>评论</li>
+                    <li>@我</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">博客</a>
+                <ul>
+                    <li>私信</li>
+                    <li>评论</li>
+                    <li>@我</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">邮箱</a>
+                <ul>
+                    <li>私信</li>
+                    <li>评论</li>
+                    <li>@我</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">网站导航</a>
+                <ul>
+                    <li>私信</li>
+                    <li>评论</li>
+                    <li>@我</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    var list = document.querySelector('.list');
+    var listLi = list.children;
+
+    for(var i = 0;i < listLi.length;i++) {
+        listLi[i].onclick = function() {
+            console.log('12222222222');
+            this.children[1].style.display = 'block';
+        }
+    }
+</script>
+</html>

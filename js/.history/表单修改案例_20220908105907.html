@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="请输入内容">
+    <button>点击</button><br><br>
+
+    密码：<input type="password" name="" id="pasIn" >
+    <button id="pas">显示密码</button>
+</body>
+<script>
+    var input = document.querySelector('input');
+    var button = document.querySelector('button');
+
+    var pasIn = document.getElementById('pasIn');
+    var pas  = document.getElementById('pas');
+
+    button.onclick = function() {
+        input.value = '我被点击啦';
+        this.disabled = true;
+    }
+
+    btn.onclick = function() {
+        if(pasIn.type == 'password') {
+            pasIn.type = 'text';
+        } else {
+            pasIn.type = 'password';
+        }
+    }
+</script>
+</html>

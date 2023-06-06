@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    input:focus{
+        outline: 1px solid #9cdcfe;
+    }
+    .login {
+        display: flex;
+        height: 28px;
+    }
+</style>
+<body>
+    <input type="text" placeholder="手机"><br><br>
+
+    <div class="login">
+        <input type="password" class="pas">
+        <p>请输入6-16位密码</p>
+    </div>
+</body>
+<script>
+    var input = document.querySelector('input');
+    var login = document.querySelector('.id');
+    var pas = document.querySelector('.pas');
+    var p = document.querySelector('p');
+
+    input.onfocus = function() {
+        this.placeholder = '';
+    }
+
+    input.onblur = function() {
+        this.placeholder = '手机';
+    }
+
+    pas.onblur = function() {
+        if(this.value.length == 0) {
+            
+        }
+        if(this.value.length < 6 || this.value.length > 16) {
+            p.innerHTML = '密码格式错误';
+            p.style.color = 'red';
+        } else {
+            p.innerHTML = '密码格式正确';
+            p.style.color = 'green';
+        }
+    }
+
+</script>
+</html>
