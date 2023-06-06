@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>发送Ajax请求</button>
+</body>
+<script>
+    var btn = document.querySelector('button')
+
+    // http请求状态码 400 404 500（服务器端的错误） 
+    // 当断网的时候  会触发  xhr.onerror 事件 
+
+    btn.onclick = function() {
+        
+        var xhr = new XMLHttpRequest()
+
+        xhr.open('get','http://127.0.0.1:3000/error')
+
+        xhr.send()
+
+        xhr.onload = function() {
+            console.log(xhr.responseText);
+
+            if(xhr.status == 400) {
+                alert('请求出错！')
+            }
+        }
+
+        // 当网络中断的时候不会触发 onload 事件 而是触发 onerror
+        xhr.onerror = function() {
+            alert('网络中断！')
+        }
+    }
+    
+</script>
+</html>

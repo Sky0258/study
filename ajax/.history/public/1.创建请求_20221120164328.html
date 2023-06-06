@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1.创建 ajax 对象
+    var xhr = new XMLHttpRequest();
+    
+    // 2.ajax要向哪里发送请求，请求的方式是什么（要自己创建/first接口用来测试数据）
+    xhr.open('get','http://127.0.0.1:3000/first')
+
+    // 3.发送请求
+    xhr.send()
+
+    // 4.获取服务器端响应到客户端的数据
+    xhr.onload = function() {
+        console.log(xhr.responseText);
+    }
+</script>
+</html>

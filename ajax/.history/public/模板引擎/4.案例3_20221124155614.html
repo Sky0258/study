@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../ajax.js"></script>
+    <script src="../../template-web.js"></script>
+</head>
+<style>
+    select {
+        width: 200px;
+        height: 30px;
+    }
+</style>
+<body>
+    <select>
+        <option value="" disabled selected hidden>请选择省份</option>
+    </select>
+    <select>
+        <option value="" disabled selected hidden>请选择市区</option>
+    </select>
+    <select>
+        <option value="" disabled selected hidden>请选择地区</option>
+    </select>
+</body>
+<script id="tpl" type="text/html">
+    {{each result}}
+        <option>{{$value.name}}</option>
+    {{/each}}
+</script>
+<script>
+    var select = document.querySelectorAll('select')
+    ajax({
+        url: 'http://127.0.0.1:3000/province',
+        success: function(xhr) {
+            var res = JSON.parse(xhr.responseText)
+            var html = template('tpl',{result: res.ans})
+            select[0].innerHTML = html
+        }
+    })
+</script>
+</html>

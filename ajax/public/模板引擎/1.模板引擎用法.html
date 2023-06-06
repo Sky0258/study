@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1. 引入模板引擎 -->
+    <script src="../../template-web.js"></script>
+</head>
+<body>
+    <div class="contain"></div>
+</body>
+<!-- 2. 准备 art-template 模板 （显示）-->
+<script type="text/html" id="tpl">
+    <h1>{{username}} {{age}}</h1>
+</script>
+<!-- 3. 告诉模板引擎将哪个数据和哪个模板进行拼接（控制） -->
+<script>
+    // template 是模板引擎中自带的函数，返回值是 2. 中准备的模板的内容
+    var html = template('tpl', {username: 'zs', age: 18})
+    
+    // 把模板写入容器 contain 中让模板显示出来
+    var contain = document.querySelector('.contain')
+    contain.innerHTML = html
+</script>
+</html>

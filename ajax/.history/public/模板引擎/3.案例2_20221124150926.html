@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../ajax.js"></script>
+    <script src="../../template-web.js"></script>
+</head>
+<style>
+    * {
+        margin: 0 auto;
+        padding: 0;
+    }
+    ul {
+        border: 1px solid #e0e0e0;
+        border-bottom: 0;
+        width: 313px;
+        margin-left: 10px;
+        display: none;
+    }
+    li {
+        list-style: none;
+        padding: 6px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    input {
+        margin-top: 50px;
+        margin-left: 10px;
+        width: 300px;
+        height: 20px;
+        padding: 5px;
+        font-size: 16px;
+    }
+</style>
+<body>
+    <input class="search" placeholder="请输入关键字">
+    <p>
+        <ul>
+        </ul>
+    </p>
+</body>
+<script id="tpl" type="text/html">
+    {{each result}}
+        <li>{{$value}}</li>
+    {{/each}}
+</script>
+<script>
+    var input = document.querySelector('input')
+    var ul = document.querySelector('ul')
+    var time = null
+    input.oninput = function() {
+        clearTimeout(time)
+
+        var time = setTimeout(function() {
+            ajax({
+                url: 'http://127.0.0.1:3000/search',
+                data: {
+                    name: input.value
+                },
+                success: function(xhr) {
+                    var a = JSON.parse(xhr.responseText) 
+                    console.log(a);
+                    var html = template('tpl',{result: a.ans})
+                    ul.innerHTML = html
+                    ul.style.display = 'block'
+                }
+            })
+        },800)
+        // time = setTimeout(ajax({
+        //     url: 'http://127.0.0.1:3000/search',
+        //     data: {
+        //         name: input.value
+        //     },
+        //     success: function(xhr) {
+        //         var a = JSON.parse(xhr.responseText) 
+        //         console.log(a);
+        //         var html = template('tpl',{result: a.ans})
+        //         ul.innerHTML = html
+        //         ul.style.display = 'block'
+        //     }
+        // }), 800);
+    }
+</script>
+</html>

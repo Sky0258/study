@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <input type="text" id="name">
+    </p>
+    <p>
+        <input type="text" name="" id="age">
+    </p>
+    <p>
+        <button>提交</button>
+    </p>
+</body>
+<script>
+    var btn = document.querySelector('button')
+    var input = document.querySelectorAll('input')
+
+    btn.onclick = function() {
+        var name = input[0].value;
+        var age = input[1].value;
+        var params = 'name=' + name + '&age=' + age;
+
+        console.log(params);
+
+        // 创建 ajax 对象
+        var xhr = new XMLHttpRequest()
+        // ajax 请求方式
+        xhr.open('get','http://127.0.0.1:3000/get?' + params)
+        // 发送请求
+        xhr.send()
+        // 得到响应参数
+        xhr.onload = function() {
+            console.log(xhr.responseText);
+        }
+    }
+</script>
+</html>

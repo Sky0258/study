@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function ajax (options) {
+        var xhr = new XMLHttpRequest()
+
+        var params = ''
+
+        for(var i in options.data) {
+            params += i + '=' + options.data[i] + '&'
+        }
+
+        params = params.substr(0,params.length - 1)
+
+        if(options.type == 'get') {
+            options.url += '?' + params
+        }
+
+        xhr.open(options.type,options.url)
+
+        if(options.type == 'post') {
+            xhr.setRequestHeader('Content-Type','application/www-')
+        }
+        xhr.send()
+
+        xhr.onload = function() {
+            options.success(xhr.responseText)
+        }
+    }
+
+    ajax({
+        type: 'get',
+        url: 'http://127.0.0.1:3000/first',
+        data: {
+            name: 'zhangsan',
+            age: 18
+        },
+        success: function(data) {
+            console.log('封装Ajax ' + data);
+        }
+    })
+</script>
+</html>

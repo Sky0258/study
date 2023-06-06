@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../ajax.js"></script>
+</head>
+<style>
+    p {
+        width: 300px;
+        height: 30px;
+        padding-left: 20px;
+        line-height: 30px;
+        border-radius: 5px;
+        border: 1px solid #e0e0e0;
+        display: none;
+    }
+    .right {
+        display: block;
+        background-color: #e1f3d8;
+    }
+    .wrong {
+        display: block;
+        background-color: #fde2e2;
+    }
+</style>
+<body>
+    邮箱：<input>
+    <p>11111</p>
+</body>
+<script>
+    var input = document.querySelector('input')
+    var p = document.querySelector('p')
+    input.onkeyup = function() {
+        var email = input.value
+        console.log(email);
+        var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/
+        
+
+        if(!reg.test(email)) {
+            p.innerHTML = '请输入正确的邮箱地址'
+            p.className = 'wrong'
+        }else {
+            p.className = ''
+        }
+
+        ajax({
+            url: 'http://127.0.0.1:3000/email',
+            data : {
+                email: email
+            },
+            success: function(xhr) {
+                p.innerHTML = xhr.responseText
+                p.className = 'right'
+            },
+            error: function(xhr) {
+                p.innerHTML = xhr.responseText
+                p.className = 'wrong'
+            }
+        })
+    }
+</script>
+</html>

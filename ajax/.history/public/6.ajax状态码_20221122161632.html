@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // ajax 状态码  0 创建    1 配置还未发送     2 发送     3 接收了部分数据      4 接收了全部数据
+
+
+    var xhr = new XMLHttpRequest()
+    console.log(xhr.readyState);
+
+    var xhr = open('post','/readyState')
+    console.log(xhr.readyState);
+
+    // 当状态码发生改变时触发（要卸载 xhr.send() 之前，不然直接就是 4 了）
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+        // 跟 xhr.onload 是一样的作用，这个可以兼容低版本
+        if(xhr.readyState == 4) {
+            console.log(xhr.responseText);
+        }
+    }
+
+    xhr.send();
+
+</script>
+</html>

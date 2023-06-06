@@ -1,0 +1,930 @@
+*{
+    padding: 0;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+ul{
+    list-style: none;
+}
+body{
+    min-width: 800px;
+}
+.banner{
+    min-width: 800px;
+    height: 35px;
+    background-color: #94070a;
+    padding: 5px 40px 5px 20px;
+    font-size: 14px;
+    line-height: 35px;
+}
+.left1{
+    float: left;
+}
+.left1 .one{
+    width: 10px;
+    padding: 0;
+}
+.left1 .two{
+    margin-left: 20px;
+}
+.banner a,span{
+    display: block;
+    float: left;
+    /* width: 65px; */
+    height: 35px;
+    padding: 0 3px;
+    text-align: center;
+    margin-right: 20px;
+    color: #d39797;
+    transition: all 0.2s ease-out 0s;
+    /* transform: scaleY(0); */
+}
+.right1{
+    float: right;
+}
+.banner a:hover{
+    border-top: 3px solid white;
+}
+.banner1{
+    min-width: 800px;
+    height: 90px;
+    box-shadow: 1px 1px 1px 1px 3px black;
+    /* border: 1px solid black; */
+}
+.banner1 img{
+    float: left;
+    margin: 15px 0;
+    margin-left: 40px;
+    margin-right: 20px;
+}
+.banner1 .left a{
+    font-size: 17px;
+    display: block;
+    float: left;
+    margin-left: 40px;
+    color: black;
+    margin-top: 32px;
+    height: 58px;
+}
+.banner1 .right a{
+    display: block;
+    float: right;
+    width: 35px;
+    height: 35px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 35px;
+    color: black;
+    border-radius: 35px;
+    margin-right: 25px;
+    margin-top: 25px;
+    position: relative;
+}
+.banner1 .right .one{
+    margin-right: 80px;
+}
+.banner1 .left a:hover{
+    color: #94070a;
+}
+.new{
+    background-color: white;
+    display: none;
+    height:180px;
+    width: 900px;
+    background-image: url(image/02.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    position: absolute;
+    top: 135px;
+    left: 10px;
+    border-top: 3px solid #94070a;
+    z-index: 10;
+}
+#dif1{
+    right: 10px;
+}
+#dif{
+    right: -350px;
+}
+.banner1 .left a:hover .new{
+    display: block;
+}
+.banner1 .left a .new img{
+    width: 145px;
+    height: 123px;
+    margin-top: 30px;
+}
+.banner1 .left a .new .l{
+    width: 400px;
+    height: 180px;
+    /* border: 1px solid black; */
+    float: left;
+}
+.banner1 .left a .new span{
+    display: block;
+    width: 160px;
+    text-align: left;
+    font-size: 16px;
+    color: #94070a;
+    line-height: 1.8;
+    margin-top: 35px;
+}
+.banner1 .left a .new .r ul{
+    /* border: 1px solid black; */
+    float: right;
+    margin-right: 60px;
+    font-size: 18px;
+    line-height: 2.2;
+    margin-top: 30px;
+    color: black;
+}
+.banner1 .left a #special ul{
+    display: block;
+    margin-right: 50px;
+}
+.banner1 .left a #special .one{
+    margin-right: 75px;
+}
+.banner1 .left a .new .r .one{
+    margin-right: 120px;
+}
+.new .r li:hover{
+    color: #94070a;
+}
+
+
+.contain {
+    width: 100%;
+    min-width: 100%;
+    /* border: 2px solid black; */
+    margin: 0 auto;
+}
+
+
+
+
+
+
+.contain h1{
+    height: 100px;
+    font-weight: 500;
+    font-size: 29px;
+    text-align: center;
+    line-height: 100px;
+    background-color: #eeebea;
+}
+.content1,.content2{
+    height: 345px;
+    background-color: #eeebea;
+    padding: 5px 50px;
+}
+#pic{
+    text-align: center;
+    position: relative;
+}
+#pic img{
+    float: left;
+    width: 550px;
+    height: 320px;
+    position: relative;
+}
+#button{
+    position: relative;
+    width: 30px;
+}
+#button #pre{
+    display: block;
+    position: absolute;
+    top: 110px;
+    left: -573px;
+    width: 20px;
+    height: 50px;
+}
+#button #next{
+    display: block;
+    position: absolute;
+    top: 110px;
+    right: 62px;
+    width: 20px;
+    height: 50px;
+}
+#pic .title{
+    width: 480px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    position: absolute;
+    bottom: -320px;
+    text-align: left;
+    font-size: 20px;
+    padding: 0 35px;
+    color: white;
+    background-color: rgba(30,30,30,0.6);
+}
+.content1 .left div{
+    width: 200px;
+    /* border: 1px solid black; */
+    float: right;
+    /* text-align: center; */
+    font-size: 15px;
+    padding: 40px 30px;
+    margin-right: 30px;
+    border-bottom: 3px solid #94070a;
+    background-color: white;
+    box-shadow: 0px 0px 7px #b2b3b4;
+}
+.content1 .left .box1,.content1 .box2{
+    height: 90px;
+}
+.content1 .left .box3,.content1 .box4{
+    margin-top: 20px;
+    height: 60px;
+}
+.content1 .left .box2,.content1 .box3{
+    background-image: url(image/底纹.jpg);
+    background-size: 100% 100%;
+}
+.content2{
+    /* border: 1px solid black; */
+    height: 480px;
+}
+.content2 .left{
+    width: 580px;
+    float: left;
+}
+.content2 .left div{
+    width: 200px;
+    float: left;
+    font-size: 15px;
+    padding: 40px 30px;
+    margin-right: 30px;
+    border-bottom: 3px solid #94070a;
+    background-color: white;
+    box-shadow: 0px 0px 7px #b2b3b4;
+    float: left;
+}
+.content2 .left .box1,.content2 .box2{
+    height: 60px;
+}
+.content2 .left .box3,.content2 .box4{
+    margin-top: 20px;
+    height: 90px;
+}
+.content2 .left .box2,.content2 .box3{
+    background-image: url(image/底纹.jpg);
+    background-size: 100% 100%;
+}
+.content2 .right{
+    position: relative;
+}
+.content2 .right img{
+    float: right;
+    width: 579px;
+    height: 339px;
+}
+.content2 .right div{
+    color: white;
+    position: absolute;
+    top:293px;
+    right: 340px;
+    font-size: 19px;
+}
+.content2 .right a{
+    position: relative;
+    top: -118px;
+    right: -611px;
+    color: #94070a;
+}
+.content2 .right i{
+    /* border: 1px solid black; */
+    /* width: 30px;
+    height: 25px; */
+    border-radius: 100%;
+}
+.content2 .right i:hover{
+    background: #94070a;
+    color: white;
+}
+.content2 .button{
+    text-align: center;
+    margin-left: 314px;
+}
+.content2 .button i{
+    background: url(image/1.svg) no-repeat left;
+    /* border: 1px solid black; */
+    width: 100px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+    font-style: normal;
+    color: #94070a;
+    margin-right: 50px;
+    font-size: 14px;
+}
+.content2 .button .one{
+    width: 146px;
+}
+.content2 .button .two{
+    width: 178px;
+    margin-right: 40px;
+}
+.content2 .button i:hover{
+    background: url(image/2.svg) no-repeat left;
+}
+.content3{
+    height: 760px;
+    /* border: 1px solid black; */
+}
+.content3 .left{
+    width: 70px;
+    float: left;
+    padding: 48px;
+}
+.content3 .left div{
+    font-size: 27px;
+    width: 30px;
+    text-align: center;
+    float: left;
+    margin: 70px 0px 100px 0;
+}
+.content3 .left i{
+    display: block;
+    /* border: 1px solid black; */
+    width: 45px;
+    height: 200px;
+    background: url(image/1.svg) no-repeat;
+    text-align: center;
+    padding-top: 60px;
+    font-style: normal;
+    float: left;
+    font-size: 14px;
+    color: #94070a;
+}
+.content3 .left i:hover{
+    background: url(image/2.svg) no-repeat;
+}
+.content3 .right{
+    margin-top: 80px;
+    margin-left: 20px;
+    /* border: 1px solid black; */
+    float: right;
+    margin-right: 15px;
+}
+.content3 .right .img{
+    margin-right: 15px;
+    width: 239px;
+    height: 590px;
+    /* border: 1px solid black; */
+    background-image: url(image/14.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    position: relative;
+    transition: all 0.5s ease-out 0s;
+}
+.content3 .right #img1{
+    background-image: url(image/15.jpg);
+}
+.content3 .right #img2{
+    background-image: url(image/16.jpg);
+}
+.content3 .right #img3{
+    background-image: url(image/17.jpg);
+}
+.content3 .right .img:hover{
+    background-size: 110% 110%;
+    background-position: center;
+    transition: all 0.6s ease-out 0s; 
+}
+.content3 .right a div{
+    width: 20px;
+    font-size: 23px;
+    color: white;
+    position: absolute;
+    line-height: 1.2;
+}
+.content3 .right a div{
+    top:35px;
+    left: 29px;
+}
+.content3 .right a .one{
+    width: 20px;
+    position: absolute;
+    right: -120px;
+    top:462px;
+    font-size: 14px;
+    line-height: 1.2;
+}
+.content4{
+    height: 762px;
+    /* border: 1px solid black; */
+    background-color: #eeebea;
+    position: relative;
+}
+.content4 #slide img{
+    margin-left: 45px;
+    margin-top: 80px;
+    width: 1165px;
+    height: 339px;
+}
+.content4 .left{
+    float: left;
+    width: 100px;
+    height: 50px;
+    background: url(image/1.svg) no-repeat;
+    padding-top: 14px;
+    padding-left: 62px;
+    font-size: 14px;
+    color: #94070a;
+    margin-left: 80px;
+}
+.content4 h1{
+    width: 1020px;
+    height: 80px;
+    float: left;
+    margin-left: 80px;
+    text-align: left;
+    margin-top: 30px;
+}
+.content4 .left:hover{
+    background: url(image/2.svg) no-repeat;
+}
+.content4 .right{
+    width: 700px;
+    height: 304px;
+    float: right;
+    background-color: #94070a;
+    position: absolute;
+    top: 316px;
+    right: 143px;
+}
+.content4 .right .l{
+    float: left;
+    width: 190px;
+    margin-top: 50px;
+    margin-left: 40px;
+}
+.content4 .right img{
+    width: 166px;
+    height: 150px;
+}
+.content4 .right .r{
+    margin-top: 50px;
+    margin-right: 52px;
+    width: 380px;
+    height: 80px;
+    color: white;
+    font-size: 14px;
+    float: right;
+}
+.content4 .right .one{
+    font-size: 20px;
+}
+.content4 .right .two{
+    margin-top: 30px;
+    line-height: 1.5;
+}
+.content5{
+    height: 625px;
+    background-color: #eeebea;
+}
+.content5 .left{
+    position: relative;
+    height: 337px;
+    width: 610px;
+    float: left;
+}
+.content5 .left span{
+    width: 534px;
+    font-size: 21px;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    margin-left: 40px;
+    background-color: rgba(30,30,30,0.8);
+    padding-left: 40px;
+    text-align: left;
+}
+.content5 .left img{
+    width: 577px;
+    height: 337px;
+    float: left;
+    margin-left: 40px;
+}
+.content5 .right .top{
+    margin-left: 870px;
+    font-size: 29px;
+    margin-bottom: 15px;
+}
+.content5 .right .top1{
+    margin-left: 885px;
+    width: 200px;
+    height: 50px;
+    background: url(image/1.svg) no-repeat;
+    color: #94070a;
+    padding-top: 13px;
+    padding-left: 59px;
+    font-size: 14px;
+}
+.content5 .right .top1:hover{
+    background: url(image/2.svg) no-repeat;
+}
+.content5 .right .bottom{
+    width: 637px;
+    height: 429px;
+    position: relative;
+    float: right;
+}
+.content5 .right .bottom img{
+    width: 577px;
+    height: 337px;
+    float: right;
+    margin-right: 50px;
+    margin-top: 90px;
+}
+.content5 .right .bottom span{
+    width: 534px;
+    font-size: 21px;
+    position: absolute;
+    bottom: 1px;
+    margin-left: 10px;
+    color: white;
+    background-color: rgba(30,30,30,0.8);
+    padding-left: 40px;
+    text-align: left;
+}
+.content6{
+    height: 1397px;
+    background-color: #382e2f;
+    position: relative;
+}
+.content6 .right{
+    float: right;
+    width: 696px;
+    height: 1000px;
+    margin-top: -23px;
+    background: url(image/22.jpg) no-repeat center;
+}
+.content6 .right span{
+    margin-top: 416px;
+    margin-left: 298px;
+    color: white;
+    font-size: 29px;
+}
+.content6 .right .one{
+    margin-top: 454px;
+    margin-left: 274px;
+    width: 200px;
+    height: 50px;
+    background: url(image/3.svg) no-repeat left;
+    padding-left: 56px;
+    padding-top: 26px;
+    color: white;
+    font-size: 14px;
+}
+.content6 .right .one:hover{
+    background: url(image/2.svg) no-repeat left;
+}
+.content6 a{
+    color: white;
+}
+.content6 .left{
+    width: 606px;
+    float: left;
+    margin-left: 26px;
+    margin-top: 153px;
+    position: absolute;
+}
+.content6 .left div{
+    width: 303px;
+    height: 294px;
+    float: left;
+    text-align: center;
+    line-height: 294px;
+    color: white;
+    font-size: 23px;
+}
+.content6 .left .l1{
+    background: url(image/23.jpg) no-repeat center;
+}
+.content6 .left .l2{
+    background: url(image/24.jpg) no-repeat center;
+}
+.content6 .left .l3{
+    background-color: #9f9998;
+    float: right;
+    margin-top: -17px;
+}
+.content6 .bottom img{
+    width: 632px;
+    height: 441px;
+    margin-top: 724px;
+}
+.content6 .bottom div{
+    width: 303px;
+    height: 284px;
+    float: left;
+    text-align: center;
+    line-height: 284px;
+    color: white;
+    font-size: 23px;
+}
+.content6 .bottom .r1{
+    background-color: #261819;
+}
+.content6 .bottom .r2{
+    background: url(image/26.jpg) no-repeat center;
+    background-size: 100% 100%;
+}
+.content6 .bottom .r3{
+    background: url(image/27.jpg) no-repeat center;
+    background-size: 100% 100%;
+    float: right;
+}
+.content6 .bottom .r{
+    width: 606px;
+    margin-left: 632px;
+    margin-top: -252px;
+}
+.content7{
+    height: 507px;
+    background-color: #eeebea;
+}
+.content7 .left{
+    width: 554px;
+    height: 500px;
+    float: left;
+}
+.content7 h1{
+    width: 161px;
+    color: #94070a;
+    float: left;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.content7 h2{
+    width: 200px;
+    float: left;
+    font-weight: 500;
+    margin-top: 74px;
+}
+.content7 .top1{
+    display: inline-block;
+    width: 134px;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    background: url(image/4.svg) no-repeat right;
+    margin-top: 80px;
+}
+.content7 ul{
+    width: 399px;
+    height: 212.5px;
+    background: white;
+    float: left;
+    margin-top: 31px;
+    margin-left: -143px;
+    padding: 40px;
+    border-bottom: 3px solid #94070a;
+}
+.content7 ul li{
+    height: 80px;
+}
+.content7 ul .one{
+    color: black;
+    font-size: 14px;
+}
+.content7 ul .two{
+    width: 100px;
+    color: #9c888a;
+    font-style: oblique;
+    margin: 10px;
+    font-size: 14px;
+}
+.content7 ul .three{
+    width: 300px;
+    height: 1px;
+    float: right;
+    border-bottom: 1px solid #e0e0e0;
+    margin-top: -20px;
+}
+.content7 .bottom ul a{
+    height: 80px;
+}
+.content7 .bottom ul a:hover .one{
+    color: #94070a;
+}
+.content7 .bottom ul a:hover .three{
+    border-bottom: 1px solid #94070a;
+}
+.content7 .right{
+    width: 707px;
+    float: right;
+}
+.content7 .right .top1{
+    margin-right: 33px;
+    float: right;
+    margin-top: 76px;
+}
+.content7 .top1 a:hover{
+    color: #94070a;
+}
+.content7 .right h2{
+    margin-left: 0px;
+}
+.content7 .right .list{
+    margin-top: 4px;
+    margin-right: 33px;
+    float: right;
+}
+.content7 .right .list .one,.content7 .right .list .two,.content7 .right .list .three{
+    width: 662px;
+    height: 84px;
+    background-color: #fff;
+    margin-left: 0px;
+    margin-top: 4px;
+    padding: 5.5px;
+}
+.content7 .right .list .one{
+    margin-top: 29px;
+}
+.content7 .right .list .one1{
+    margin-top: 0px;
+    width: 200px;
+    height: 82px;
+    background: url(image/28.jpg) no-repeat top;
+    background-color: #ebe6e5;
+    font-size: 20px;
+    color: #a19896;
+    line-height: 82px;
+    text-align: center;
+    float: left;
+}
+.content7 .right .list .one2{
+    width: 436px;
+    float: right;
+    font-size: 14px;
+    height: 84px;
+    line-height: 84px;
+    padding-left: 16px;
+    border-left: 1px solid #ebe6e5;
+}
+.content7 .right .list .one2 a:hover{
+    color: #94070a;
+}
+.content7 .right .list .three{
+    border-bottom: 3px solid #94070a;
+}
+.content8{
+    height: 837px;
+    background: url(image/29.jpg) no-repeat right;
+    background-size: 43% 100%;
+}
+.content8 h1{
+    background-color: transparent;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.content8 .left{
+    width: 580px;
+    height: 565px;
+    float: left;
+    margin-left: 40px;
+    background: url(image/30.jpg) no-repeat center;
+    background-size: 100% 100%;
+    transition: all 0.5s ease-out 0s;
+}
+.content8 .right{
+    height: 565px;
+    width: 642px;
+    float: right;
+}
+.content8 .right div{
+    width: 287px;
+    height: 274px;
+    float: left;
+    margin-left: 15px;
+    margin-bottom: 18px;
+    transition: all 0.5s ease-out 0s;
+}
+.content8 .right .one{
+    background: url(image/34.jpg) no-repeat center;
+    background-size: 100% 100%;
+}
+.content8 .right .two{
+    background: url(image/31.jpg) no-repeat center;
+    background-size: 100% 100%;
+}
+.content8 .right .three{
+    background: url(image/32.jpg) no-repeat center;
+    background-size: 100% 100%;
+}
+.content8 .right .four{
+    background: url(image/33.jpg) no-repeat center;
+    background-size: 100% 100%;
+}
+.content8 .right div:hover{
+    background-size: 110% 110%;
+    transition: all 0.5s ease-out 0s;
+}
+.content8 .left:hover{
+    background-size: 105% 105%;
+    transition: all 0.5s ease-out 0s;
+}
+.content8 .right span{
+    color: white;
+    width: 282px;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(30,30,30,0.8);
+    text-align: center;
+    margin-top: 234px;
+}
+.content8 .bottom{
+    width: 200px;
+    height: 50px;
+    background: url(image/1.svg) no-repeat;
+    color: #94070a;
+    padding-top: 13px;
+    padding-left: 59px;
+    font-size: 14px;
+    margin-top: 615px;
+    margin-left: 570px;
+}
+.content8 .bottom a{
+    color: #94070a;
+}
+.content8 .bottom:hover{
+    background: url(image/2.svg) no-repeat;
+}
+.low{
+    height: 100px;
+    background-color: #94070a;
+    color: white;
+}
+.low ul li{
+    float: left;
+    margin-left: 50px;
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 100px;
+}
+.low ul li a{
+    color: white;
+}
+.low ul li a:hover{
+    color: #eacdce;
+}
+.low .right{
+    width: 212px;
+    float: right;
+    margin-top: 30px;
+}
+.low .right a{
+    display: inline-block;
+    width: 46px;
+    height: 46x;
+    border-radius: 46px;
+    background: white;
+    text-align: center;
+    line-height: 40px;
+    margin-left: 10px;
+    color: #94070a;
+}
+.low .right a:hover{
+    background-color: #eacdce;
+}
+.low1{
+    height: 138px;
+    background-color: #302a29;
+    padding: 20px 40px;
+}
+.low1 .logo{
+    width: 228px;
+    height: 64px;
+    background: url(image/35.jpg) no-repeat center;
+    background-size: 100% 100%;
+    margin-left: 448px;
+}
+.low1 ul{
+    margin-top: 40px;
+}
+.low1 ul li{
+    float: left;
+    font-size: 14px;
+    color: white;
+}
+.low1 ul li div{
+    float: left;
+}
+.low1 ul li span{
+    width: 3px;
+    float: left;
+    text-align: center;
+    color: #45403d;
+    margin-left: 20px;
+    padding: 0;
+}

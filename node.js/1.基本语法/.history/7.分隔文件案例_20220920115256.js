@@ -1,0 +1,28 @@
+const fs = require('fs');
+const path = require('path');
+
+fs.readFile(path.join(__dirname,'./file/分隔文件案例/24.缓动动画.html'),'utf-8',function(error,dataStr) {
+    if(error) {
+        return console.log('读取文件失败！' + error.message);
+    }
+
+    // console.log(dataStr);
+    const reqStyle = /<style>[\s\S]*<\/style>/;
+    const reqScript = /<script>[\s\S]*<\/script>/;
+
+    resolveCSS(dataStr);
+
+    function resolveCSS(dataStr) {
+        // 提取匹配正则表达式
+        const r1 = reqStyle.exec(dataStr);
+        // r1[0]是结果
+        const r2 = r1[0].replace('<style>','').replace('</style>','');
+        fs.writeFile(path.join(__dirname,'./file/分隔案例.css'),r2,function(err) {
+            if(err) {
+                return console.log('写入CSS文件失败！' + err.message);
+            }
+
+            console.log('写入CSS文件成功！');
+        })
+    }
+})

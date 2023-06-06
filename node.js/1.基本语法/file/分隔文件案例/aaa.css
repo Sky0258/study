@@ -1,0 +1,40 @@
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    .spe {
+        margin-top: 50px;
+        width: 200px;
+        height: 200px;
+        background-color: #909cff;
+        position: relative;
+    }
+
+    .one {
+        height: 40px;
+        width: 150px;
+        margin-top: 80px;
+        line-height: 40px;
+        margin: 50px auto;
+        float: left;
+    }
+
+    .one span {
+        display: block;
+        float: left;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        position: relative;
+        background-color: #ffd9e3;
+        z-index: 10;
+        cursor: pointer;
+    }
+    .one div {
+        width: 150px;
+        height: 40px;
+        position: relative;
+        background-color: #ffd9e3;
+        left: -150px;
+    }

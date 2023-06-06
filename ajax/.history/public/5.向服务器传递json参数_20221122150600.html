@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <input type="text" id="name">
+    </p>
+    <p>
+        <input type="text" name="" id="age">
+    </p>
+    <p>
+        <button>提交</button>
+    </p>
+</body>
+<script>
+    var btn = document.querySelector('button')
+    var input = document.querySelectorAll('input')
+
+    var xhr = new XMLHttpRequest()
+
+    // get 方式都是 application/x-www-form-urlencoded   name='12'&age='23'
+    // post 方式才有多种
+    xhr.open('/post','http://127.0.0.1:3000/json')
+    xhr.setRequestHeader('Content-Type','application/json')
+    xhr.send(JSON.stringify({name: input[0].value,age: input[1].value}))
+    xhr.onload = function() {
+        console.log(xhr.responseText);
+    }
+</script>
+</html>
